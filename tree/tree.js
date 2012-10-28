@@ -113,7 +113,7 @@ TreeNode.prototype.getFloor = function(){
 	}
 }
 
-TreeNode.prototype.getDegree = function(){
+TreeNode.prototype.getDepth = function(){
 	var degree = 0;
 
 	this.breadthFirstSearch(function(item){

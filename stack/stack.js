@@ -20,3 +20,7 @@ Stack.prototype.pop = function(){
 	}
 }
 
+Stack.prototype.empty = function(){
+	return this.top <= -1;
+}
+
