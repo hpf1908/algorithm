@@ -50,6 +50,8 @@ binaryNode1.rightChild = binaryNode4;
 
 binaryNode2.rightChild = binaryNode5;
 
+console.log('root depth:' + binaryRoot.getDepth());
+
 console.log('recurePreOrderTravel test');
 
 recurePreOrderTravel(binaryRoot , function(node){
@@ -85,6 +87,19 @@ console.log('postOrderTravel test');
 postOrderTravel(binaryRoot , function(node){
 	console.log(node.item);
 });
+
+//threaded test
+
+console.log('threaded test');
+
+var threadedRoot = createThreadedBinaryTree(binaryRoot);
+
+console.log(threadedRoot);
+
+middleThreadedOrder(threadedRoot , function(node){
+	console.log(node.item);
+});
+
 
 
 

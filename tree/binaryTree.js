@@ -2,6 +2,32 @@ var BinaryTreeNode = function(item , leftChild , rightChild){
 	this.item = item;
 	this.leftChild = leftChild;
 	this.rightChild = rightChild;
+	
+	//used for cluesTree
+	this.lbit = 1;
+	this.rbit = 1;
+}
+
+BinaryTreeNode.prototype.getDepth = function(){
+
+	var leftDepth = this.leftChild ? this.leftChild.getDepth() : 0;
+	var rightDepth = this.rightChild ? this.rightChild.getDepth() : 0;
+
+	if(leftDepth > rightDepth) {
+		return leftDepth + 1;
+	} else {
+		return rightDepth + 1;
+	}
+}
+
+BinaryTreeNode.prototype.remove = function(){
+	if(this.parent) {
+		if(this.parent.leftChild == this) {
+			this.parent.leftChild = null;
+		} else if(this.parent.rightChild == this){
+			this.parent.rightChild = null;
+		}
+	}
 }
 
 var recurePreOrderTravel = function(item , callback) {
