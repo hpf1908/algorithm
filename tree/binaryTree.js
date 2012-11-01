@@ -116,4 +116,23 @@ var postOrderTravel = function(item , callback) {
 	} while(!stack.empty() || !!citem);
 }
 
+var breadthOrderTravel = function(item , callback) {
+	var queue = new Queue();
+	queue.enQueue(item);
+
+	while(!queue.empty()) {
+
+		var p = queue.deQueue();
+		callback && callback(p);
+		
+		if(p.leftChild) {
+			queue.enQueue(p.leftChild);
+		} 
+
+		if(p.rightChild) {
+			queue.enQueue(p.rightChild);
+		}
+	}
+}
+
 
