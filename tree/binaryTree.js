@@ -30,95 +30,95 @@ BinaryTreeNode.prototype.remove = function(){
 	}
 }
 
-var recurePreOrderTravel = function(item , callback) {
-	if(!!item) {
-		callback && callback(item);
-		recurePreOrderTravel(item.leftChild , callback);
-		recurePreOrderTravel(item.rightChild , callback);
+var recurePreOrderTravel = function(node , callback) {
+	if(!!node) {
+		callback && callback(node);
+		recurePreOrderTravel(node.leftChild , callback);
+		recurePreOrderTravel(node.rightChild , callback);
 	}
 }
 
-var recureMiddleOrderTravel = function(item , callback) {
-	if(!!item) {
-		recureMiddleOrderTravel(item.leftChild , callback);
-		callback && callback(item);
-		recureMiddleOrderTravel(item.rightChild , callback);
+var recureMiddleOrderTravel = function(node , callback) {
+	if(!!node) {
+		recureMiddleOrderTravel(node.leftChild , callback);
+		callback && callback(node);
+		recureMiddleOrderTravel(node.rightChild , callback);
 	}
 }
 
-var recurePostOrderTravel = function(item , callback) {
-	if(!!item) {
-		recurePostOrderTravel(item.leftChild , callback);
-		recurePostOrderTravel(item.rightChild , callback);
-		callback && callback(item);
+var recurePostOrderTravel = function(node , callback) {
+	if(!!node) {
+		recurePostOrderTravel(node.leftChild , callback);
+		recurePostOrderTravel(node.rightChild , callback);
+		callback && callback(node);
 	}
 }
 
 
-var preOrderTravel = function(item , callback) {
+var preOrderTravel = function(node , callback) {
 	var stack = new Stack();
-	stack.push(item);
+	stack.push(node);
 
 	while(!stack.empty()) {
-		var citem = stack.pop();
-		callback && callback(citem);
+		var cnode = stack.pop();
+		callback && callback(cnode);
 
-		if(citem.rightChild) {
-			stack.push(citem.rightChild);
+		if(cnode.rightChild) {
+			stack.push(cnode.rightChild);
 		}
 
-		if(citem.leftChild) {
-			stack.push(citem.leftChild);
+		if(cnode.leftChild) {
+			stack.push(cnode.leftChild);
 		}
 	}
 }
 
-var middleOrderTravel = function(item , callback) {
+var middleOrderTravel = function(node , callback) {
 	var stack = new Stack();
-	var citem = item;
+	var cnode = node;
 
 	do {
-		while(citem) {
-			stack.push(citem);
-			citem = citem.leftChild;
+		while(cnode) {
+			stack.push(cnode);
+			cnode = cnode.leftChild;
 		}
 
-		citem = stack.pop();
-		callback && callback(citem);
-		citem = citem.rightChild;
-	} while(!stack.empty() || !!citem);
+		cnode = stack.pop();
+		callback && callback(cnode);
+		cnode = cnode.rightChild;
+	} while(!stack.empty() || !!cnode);
 }
 
-var postOrderTravel = function(item , callback) {
+var postOrderTravel = function(node , callback) {
 	var stack = new Stack();
 	var flagStack = new Stack();
-	var citem = item;
+	var cnode = node;
 	var flag;
 
 	do {
-		while(citem) {
-			stack.push(citem);
+		while(cnode) {
+			stack.push(cnode);
 			flagStack.push(0);
-			citem = citem.leftChild;
+			cnode = cnode.leftChild;
 		}
 
-		citem = stack.pop();
+		cnode = stack.pop();
 		flag = flagStack.pop();
 
 		if(flag == 0) {
-			stack.push(citem);
+			stack.push(cnode);
 			flagStack.push(1);
-			citem = citem.rightChild;
+			cnode = cnode.rightChild;
 		} else {
-			callback && callback(citem);
-			citem = null;
+			callback && callback(cnode);
+			cnode = null;
 		}
-	} while(!stack.empty() || !!citem);
+	} while(!stack.empty() || !!cnode);
 }
 
-var breadthOrderTravel = function(item , callback) {
+var breadthOrderTravel = function(node , callback) {
 	var queue = new Queue();
-	queue.enQueue(item);
+	queue.enQueue(node);
 
 	while(!queue.empty()) {
 
@@ -133,6 +133,22 @@ var breadthOrderTravel = function(item , callback) {
 			queue.enQueue(p.rightChild);
 		}
 	}
+}
+
+var isTreeNodeInBTree = function(head , node){
+
+	if(!head || !node) {
+		return false;
+	}
+
+	var findFlag = false;
+	preOrderTravel(head , function(iterator){
+		if(node == iterator) {
+			findFlag = true;
+		}
+	});
+
+	return findFlag;
 }
 
 

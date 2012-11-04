@@ -127,6 +127,18 @@ middleOrderTravel(bSTreeRoot , function(node){
 	console.log(node.item);
 });
 
+console.log('createAvlBtree test');
+
+// var inputArr = [46,15,20,35,28,18,50,54];
+var inputArr = [46 , 15 , 20 , 35 , 28 , 58 , 18 , 50 , 54]
+var avlTreeRoot = createAvlBtree(inputArr);
+
+console.log(avlTreeRoot);
+
+middleOrderTravel(avlTreeRoot , function(node){
+	console.log(node.item);
+});
+
 
 
 
