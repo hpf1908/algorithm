@@ -140,6 +140,39 @@ middleOrderTravel(avlTreeRoot , function(node){
 });
 
 
+console.log('huffmanEncodeString test');
+
+var inputStr = 'aaaaaaaaaabbbbbbbbbbbbcccccccccccccccaaaaaaaaaabbbbbbbbbbbbccccccccccccccc';
+// var inputStr = 'hello world';
+// var inputStr = 'world';
+
+var ouputBits = huffmanEncodeString(inputStr);
+var ouputStr = convertBitsToString(ouputBits);
+
+console.log('input:' + inputStr + ' len:' + inputStr.length);
+console.log('output bits:' + ouputBits);
+console.log('output:' + ouputStr + ' len:' + ouputStr.length);
+
+console.log('huffmanCompressString test');
+
+var originStr = inputStr;
+var ouputStr = huffmanCompressString(inputStr);
+console.log('input:' + inputStr + ' len:' + inputStr.length);
+console.log('output:' + ouputStr + ' len:' + ouputStr.length);
+console.log('compress ratio:' + ouputStr.length / inputStr.length );
+
+console.log('huffmanDeCompressString test');
+var inputStr = ouputStr;
+var ouputStr = huffmanDeCompressString(inputStr);
+console.log('input:' + inputStr);
+console.log('output:' + ouputStr);
+console.log('origin:' + originStr);
+
+var isEquals = originStr == ouputStr;
+console.log('equals: ' + isEquals);
+
+
+
 
 
 
