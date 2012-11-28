@@ -239,3 +239,76 @@ AdjMatris.prototype.BFS = function(visited , id , iterator) {
 	}
 }
 
+AdjMatris.prototype.isAllConneced = function() {
+	var visited = {};
+
+	for (var i = 0; i < this.vertexs.length; i++) {
+		var vetex = this.vertexs[i];
+		visited[vetex.id] = false;
+	}
+
+	if(this.vertexs.length <= 0) {
+		return true;
+	}
+
+	var vetex = this.vertexs[0];
+	var count = 0;
+
+	this.BFS(visited , vetex.id , function() {
+		count++;
+	});	
+	return count == this.vertexs.length;
+}
+
+AdjMatris.prototype.miniSpantPrim = function() {
+
+	var lowerCost = [], teends = [];
+	var spantResult = [];
+	var spantCost = 0;
+
+	lowerCost[0] = 0;
+	teends[0] = 0;
+
+	for (var i = 1; i < this.vertexs.length; i++) {
+		teends[i] = 0;
+		lowerCost[i] = this.matris[0][i];
+	}
+
+	for (var i = 1; i < this.vertexs.length; i++) {
+		var miniCost = Number.MAX_VALUE;
+		var j = 1 , k;
+
+		while(j < this.vertexs.length) {
+			if(lowerCost[j] > 0 && miniCost > lowerCost[j]) {
+				miniCost = lowerCost[j];
+				k = j;
+			}
+			j++;
+		}
+
+		var from = this.vertexs[teends[k]];
+		var to = this.vertexs[k];
+
+		spantResult.push({
+			from : from,
+			to   : to,
+			cost : miniCost
+		});
+
+		spantCost+= miniCost;
+		lowerCost[k] = 0;
+
+		for (var j = 0; j < this.vertexs.length; j++) {
+			if(this.matris[k][j] < lowerCost[j])	{
+				lowerCost[j] = this.matris[k][j];
+				teends[j] = k;
+			}
+		}
+	}
+
+	return {
+		spantCost   : spantCost,
+		spantResult : spantResult
+	};
+}
+

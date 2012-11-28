@@ -1,7 +1,17 @@
+/**
+      北京
+            天津
+  河北    
+   
+     福建 
+
+        台湾
+ */
+
 var inputVertexs = [];
 
 inputVertexs.push(new Vertex(1 , '北京'));
-inputVertexs.push(new Vertex(2 , '上海'));
+inputVertexs.push(new Vertex(2 , '河北'));
 inputVertexs.push(new Vertex(3 , '天津'));
 inputVertexs.push(new Vertex(4 , '福建'));
 inputVertexs.push(new Vertex(5 , '台湾'));
@@ -14,8 +24,26 @@ inputEdges.push(new Edge(2 , 1, 5));
 inputEdges.push(new Edge(1 , 3, 2));
 inputEdges.push(new Edge(3 , 1, 2));
 
-inputEdges.push(new Edge(2 , 4, 6));
-inputEdges.push(new Edge(4 , 2, 6));
+inputEdges.push(new Edge(1 , 4, 6));
+inputEdges.push(new Edge(4 , 1, 6));
+
+inputEdges.push(new Edge(1 , 5, 15));
+inputEdges.push(new Edge(5 , 1, 15));
+
+inputEdges.push(new Edge(2 , 3, 3));
+inputEdges.push(new Edge(3 , 2, 3));
+
+inputEdges.push(new Edge(2 , 4, 7));
+inputEdges.push(new Edge(4 , 2, 7));
+
+inputEdges.push(new Edge(2 , 5, 10));
+inputEdges.push(new Edge(5 , 2, 10));
+
+inputEdges.push(new Edge(3 , 4, 8));
+inputEdges.push(new Edge(4 , 3, 8));
+
+inputEdges.push(new Edge(3 , 5, 10));
+inputEdges.push(new Edge(5 , 3, 10));
 
 inputEdges.push(new Edge(4 , 5, 6));
 inputEdges.push(new Edge(5 , 4, 6));
@@ -38,3 +66,15 @@ console.log('travelBFS test');
 adjMatris.travelBFS(function(vetex) {
 	console.log(vetex);
 });
+
+console.log('isAllConneced');
+
+console.log(adjMatris.isAllConneced());
+
+console.log('miniSpantPrim');
+
+if(adjMatris.isAllConneced()) {
+	console.log(adjMatris.miniSpantPrim());
+} else {
+	console.log('not connected');
+}

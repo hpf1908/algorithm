@@ -4,12 +4,16 @@
 		"selected_items":
 		[
 			[
-				"ma",
-				"matris"
+				"id",
+				"id"
 			],
 			[
-				"id",
-				"idsMap"
+				"ve",
+				"vetex"
+			],
+			[
+				"ma",
+				"matris"
 			],
 			[
 				"ini",
@@ -33,10 +37,6 @@
 			],
 			[
 				"ver",
-				"vertexs"
-			],
-			[
-				"ve",
 				"vertexs"
 			],
 			[
@@ -411,15 +411,7 @@
 			"file": "test/testGraph.js",
 			"settings":
 			{
-				"buffer_size": 609,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "graph/adjMatris.js",
-			"settings":
-			{
-				"buffer_size": 3627,
+				"buffer_size": 963,
 				"line_ending": "Unix"
 			}
 		}
@@ -448,9 +440,10 @@
 	},
 	"file_history":
 	[
-		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testGrapha.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
+		"/Users/hpf1908/projects/javascript/algorithm/queue/queue.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testGrapha.js",
 		"/Users/hpf1908/projects/javascript/algorithm/matcher/kmpMatcher.js",
 		"/Users/hpf1908/projects/javascript/algorithm/matcher/rabinKappMatcher.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
@@ -574,8 +567,7 @@
 		"/Users/hpf1908/projects/jsc/test/module/tmpl.js",
 		"/Users/hpf1908/projects/jsc/test/watcher/tmpl.js",
 		"/Users/hpf1908/projects/jsc/node_modules/uglify-js/README.html",
-		"/Users/hpf1908/projects/jsc/package.json",
-		"/Users/hpf1908/projects/jsc/test/module/submodule/index.js"
+		"/Users/hpf1908/projects/jsc/package.json"
 	],
 	"find":
 	{
@@ -738,7 +730,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -746,47 +738,20 @@
 					"file": "test/testGraph.js",
 					"settings":
 					{
-						"buffer_size": 609,
+						"buffer_size": 963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								279,
-								279
+								772,
+								772
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "graph/adjMatris.js",
-					"settings":
-					{
-						"buffer_size": 3627,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15,
-								15
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
