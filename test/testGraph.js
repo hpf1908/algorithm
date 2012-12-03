@@ -42,8 +42,8 @@ inputEdges.push(new Edge(5 , 2, 10));
 inputEdges.push(new Edge(3 , 4, 8));
 inputEdges.push(new Edge(4 , 3, 8));
 
-inputEdges.push(new Edge(3 , 5, 10));
-inputEdges.push(new Edge(5 , 3, 10));
+inputEdges.push(new Edge(3 , 5, 1));
+inputEdges.push(new Edge(5 , 3, 1));
 
 inputEdges.push(new Edge(4 , 5, 6));
 inputEdges.push(new Edge(5 , 4, 6));
@@ -74,7 +74,15 @@ console.log(adjMatris.isAllConneced());
 console.log('miniSpantPrim');
 
 if(adjMatris.isAllConneced()) {
-	console.log(adjMatris.miniSpantPrim());
+	console.log(adjMatris.miniSpanPrim());
+} else {
+	console.log('not connected');
+}
+
+console.log('miniSpanKruskal');
+
+if(adjMatris.isAllConneced()) {
+	console.log(adjMatris.miniSpanKruskal());
 } else {
 	console.log('not connected');
 }

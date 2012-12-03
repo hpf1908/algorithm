@@ -147,6 +147,14 @@ AdjMatris.prototype.delEdgesById = function(id) {
 	} 
 }
 
+AdjMatris.prototype.delEdge = function(edge) {
+	var fromIndex = this.id2Index(edge.fromId);
+	var toIndex   = this.id2Index(edge.toId);
+
+	var hMatris = this.matris[fromIndex];
+	hMatris[toIndex] = Number.MAX_VALUE;
+}
+
 AdjMatris.prototype.delVertexById = function(id) {
 	var index = this.id2Index(id);
 	if(this.checkIndex(index)) {
@@ -166,6 +174,9 @@ AdjMatris.prototype.delVertexById = function(id) {
 	}
 }
 
+/**
+ * 图的深度优先遍历
+ */
 AdjMatris.prototype.travelDFS = function(iterator) {
 
 	var visited = {};
@@ -199,6 +210,9 @@ AdjMatris.prototype.DFS = function(visited , id , iterator) {
 	}
 }
 
+/**
+ * 图的广度优先遍历
+ */
 AdjMatris.prototype.travelBFS = function(iterator) {
 	var visited = {};
 
@@ -239,6 +253,9 @@ AdjMatris.prototype.BFS = function(visited , id , iterator) {
 	}
 }
 
+/**
+ * 判断无向图是否连通
+ */
 AdjMatris.prototype.isAllConneced = function() {
 	var visited = {};
 
@@ -260,11 +277,15 @@ AdjMatris.prototype.isAllConneced = function() {
 	return count == this.vertexs.length;
 }
 
-AdjMatris.prototype.miniSpantPrim = function() {
+/**
+ * 普里姆算法 - 求解无向图的最小生成树
+ * 适合于稠密图
+ */
+AdjMatris.prototype.miniSpanPrim = function() {
 
 	var lowerCost = [], teends = [];
-	var spantResult = [];
-	var spantCost = 0;
+	var spanResult = [];
+	var spanCost = 0;
 
 	lowerCost[0] = 0;
 	teends[0] = 0;
@@ -289,13 +310,13 @@ AdjMatris.prototype.miniSpantPrim = function() {
 		var from = this.vertexs[teends[k]];
 		var to = this.vertexs[k];
 
-		spantResult.push({
+		spanResult.push({
 			from : from,
 			to   : to,
 			cost : miniCost
 		});
 
-		spantCost+= miniCost;
+		spanCost+= miniCost;
 		lowerCost[k] = 0;
 
 		for (var j = 0; j < this.vertexs.length; j++) {
@@ -307,8 +328,157 @@ AdjMatris.prototype.miniSpantPrim = function() {
 	}
 
 	return {
-		spantCost   : spantCost,
-		spantResult : spantResult
+		spanCost  : spanCost,
+		spanResult : spanResult
+	};
+}
+
+AdjMatris.prototype.getMiniEdge = function(edges , excepts) {
+
+	if(excepts == undefined) {
+		excepts = edges;
+		edges = this.edges;
+	} 
+
+	excepts = excepts ? excepts : [];
+
+	var exceptesMap = {},
+		miniEdge = undefined,
+		minCost = Number.MAX_VALUE;
+
+	for (var i = 0; i < excepts.length; i++) {
+		var edge = excepts[i];
+		exceptesMap[edge.fromId + ' ' + edge.toId] = true;
+	}
+
+	for (var i = 0; i < edges.length; i++) {
+		var edge = edges[i];
+
+		if(exceptesMap[edge.fromId + ' ' + edge.toId]) {
+			continue;
+		}
+
+		if(edge.weight < minCost) {
+			minCost  = edge.weight;
+			miniEdge = edge;
+		}
+	}
+
+	return miniEdge;
+}
+
+//判断是否产生回路
+AdjMatris.prototype.hasLoop = function(vertexs) {
+
+	vertexs = this.vertexs;
+
+	// debugger;
+	for (var i = 0; i < vertexs.length; i++) {
+		var startVetex = vertexs[i];
+		var visitedVetexs = {};
+		var stack = new Stack();
+
+
+		stack.push({
+			parent : undefined,
+			vetex  : startVetex
+		});
+
+		while(!stack.empty()) {
+			// debugger;
+			var stVetex = stack.pop();
+			var vetex = stVetex.vetex;
+			var vetexParent = stVetex.parent;
+
+			if(visitedVetexs[vetex.id]) {
+				return true;
+			}
+
+			visitedVetexs[vetex.id] = true;
+
+			var index = this.id2Index(vetex.id);
+			var outputs = this.getOuputAdjByIndex(index);
+
+			for (var j = 0; j < outputs.length; j++) {
+
+				if(outputs[j] !=  vetexParent) {
+					stack.push({
+						parent : vetex ,
+						vetex  : outputs[j]
+					});
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+/**
+ * 克鲁斯卡尔算法 - 求解无向图的最小生成树
+ * 相比普里姆方法更适合于稀疏图
+ */
+AdjMatris.prototype.miniSpanKruskal = function() {
+
+	//先构造一个无边的网络存储当前的最小生成树
+	var miniAdjMatris = new AdjMatris(this.vertexs , []);
+	var miniEdgeNum = 0;
+	var edges = this.edges;
+	var excepts = [];
+	var miniEdge = undefined;
+
+	var spanResult = [];
+	var spanCost = 0;
+
+	while(miniEdgeNum < this.vertexs.length) {
+
+		miniEdge = this.getMiniEdge(edges , excepts);
+
+		if (!miniEdge) {
+			break;
+		}
+
+		var fromEdge = {
+			fromId : miniEdge.fromId,
+			toId   : miniEdge.toId,
+			weight : miniEdge.weight
+		} , toEdge = {
+			fromId : miniEdge.toId,
+			toId   : miniEdge.fromId,
+			weight : miniEdge.weight
+		};
+
+		//选择过的最小边以后就不能再选了，由于是无向图，所以双向都得添加
+		excepts.push(fromEdge);
+		excepts.push(toEdge);
+
+		miniAdjMatris.addEdge(fromEdge);
+		miniAdjMatris.addEdge(toEdge);
+
+		// 判断是否有回路
+		// 如果产生回路，放弃该边
+		// 如果没有回路，改边加入最小生成树
+		if (miniAdjMatris.hasLoop()) {
+			miniAdjMatris.delEdge(fromEdge);
+			miniAdjMatris.delEdge(toEdge);
+		} else {
+			// debugger;
+			var from = this.vertexs[this.id2Index(fromEdge.fromId)];
+			var to = this.vertexs[this.id2Index(fromEdge.toId)];
+			spanCost += fromEdge.weight;
+
+			miniEdgeNum++;
+			spanResult.push({
+				from : from,
+				to   : to,
+				cost : fromEdge.weight
+			});
+		}
+	}
+
+	return {
+		spanCost  : spanCost,
+		spanResult : spanResult
 	};
 }
 

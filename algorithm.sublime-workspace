@@ -4,16 +4,24 @@
 		"selected_items":
 		[
 			[
-				"id",
-				"id"
-			],
-			[
-				"ve",
-				"vetex"
+				"sp",
+				"spantResult"
 			],
 			[
 				"ma",
 				"matris"
+			],
+			[
+				"ve",
+				"vertexs"
+			],
+			[
+				"v",
+				"vertexs"
+			],
+			[
+				"id",
+				"id"
 			],
 			[
 				"ini",
@@ -102,10 +110,6 @@
 			[
 				"code",
 				"codesTable"
-			],
-			[
-				"sp",
-				"split"
 			],
 			[
 				"ta",
@@ -408,10 +412,21 @@
 	"buffers":
 	[
 		{
+			"contents": "/**\n * 图的邻接矩阵表示\n */\nvar Vertex = function(id , title) {\n	this.title = title;\n	this.id = id;\n}\n\n/**\n * 输入参数：顶点, 顶点偶对\n */\nvar Edge = function(from , to, weight) {\n	this.fromId = from;\n	this.toId   = to;\n	this.weight = weight;\n}\n\nvar AdjMatris = function(vertexs , edges) {\n\n	this.idsMap = {};\n	this.vertexs = vertexs;\n	this.edges = edges;\n	this.matris = [];\n\n	this.initialize();\n	this.addEdges(edges);\n}\n\nAdjMatris.prototype.initialize = function(){\n\n	var matris = this.matris;\n	var vertexs = this.vertexs;\n	var martisNum = this.vertexs.length;\n\n	//初始化idmap\n	this.initialIdsMap(0);\n\n	for (var i = 0; i < martisNum; i++) {\n		matris[i] = [];\n		for (var j = 0; j < martisNum; j++) {\n			matris[i][j] = Number.MAX_VALUE;\n		}\n	}\n}\n\nAdjMatris.prototype.id2Index = function(id) {\n	return this.idsMap[id] == undefined ? -1 : this.idsMap[id];\n}\n\nAdjMatris.prototype.checkIndex = function(index) {\n	return index >=0 && index < this.vertexs.length;\n}\n\nAdjMatris.prototype.checkVertex = function(vertex) {\n	return vertex && vertex.id;\n}\n\nAdjMatris.prototype.getOuputAdjById = function(id) {\n	var index = this.id2Index(id);\n	return index < 0 ? [] : this.getOuputAdjByIndex(index);\n}\n\nAdjMatris.prototype.initialIdsMap = function(start) {\n	for (var i = start; i < this.vertexs.length; i++) {\n		var vertex = this.vertexs[i];\n		this.idsMap[vertex.id] = i;\n	}\n}\n\nAdjMatris.prototype.getOuputAdjByIndex = function(index) {\n\n	var res = [];\n	var fMartis = this.matris[index];\n\n	for (var i = 0; i < this.vertexs.length; i++) {\n		if(fMartis && fMartis[i] != Number.MAX_VALUE && this.vertexs[i]) {\n			res.push(this.vertexs[i]);\n		}\n	};\n	return res;\n}\n\nAdjMatris.prototype.getInputAdjById = function(id) {\n	var index = this.id2Index(id);\n	return index < 0 ? [] : this.getOuputAdjByIndex(index);\n}\n\nAdjMatris.prototype.getInputAdjByIndex = function(index) {\n\n	var res = [];\n\n	for (var i = 0; i < this.vertexs.length; i++) {\n		var fMartis = this.matris[i];\n		if(fMartis && fMartis[index] != Number.MAX_VALUE && this.vertexs[i]) {\n			res.push(this.vertexs[i]);\n		}\n	};\n	return res;\n}\n\nAdjMatris.prototype.getAdjsById = function(id) {\n	var inputs  = this.getInputAdjById(id);\n	var outputs = this.getOuputAdjById(id);\n	return inputs.concat(outputs);\n}\n\nAdjMatris.prototype.addAdj = function(vertex) {\n	for (var i = 0; i < this.vertexs.length - 1; i++) {\n		this.matris[i].push(Number.MAX_VALUE);\n	}\n\n	var arr = [];\n	this.vertexs.push(vertex);\n	for (var i = 0; i < this.vertexs.length; i++) {\n		arr.push(Number.MAX_VALUE);\n	}\n	this.matris.push(arr);\n}\n\nAdjMatris.prototype.addEdges = function(edges) {\n	for (var i = 0; i < edges.length; i++) {\n		this.addEdge(edges[i]);\n	}\n}\n\nAdjMatris.prototype.addEdge = function(edge) {\n	var from = this.id2Index(edge.fromId);\n	var to   = this.id2Index(edge.toId);\n	if(this.checkIndex(from) && this.checkIndex(to)) {\n		this.matris[from][to] = edge.weight;\n	}\n}\n\n//删除边信息只是将标志位清除，不是实际删除节点\nAdjMatris.prototype.delEdgesById = function(id) {\n	var index = this.id2Index(id);\n	if(this.checkIndex(index)) {\n		var hMatris = this.matris[index];\n		for (var i = 0; i < this.vertexs.length; i++) {\n			hMatris[i] = Number.MAX_VALUE;\n		}\n\n		for (var i = 0; i < this.vertexs.length; i++) {\n			hMatris = this.matris[i];\n			hMatris[index] = Number.MAX_VALUE; \n		};\n	} \n}\n\nAdjMatris.prototype.delVertexById = function(id) {\n	var index = this.id2Index(id);\n	if(this.checkIndex(index)) {\n		var hMatris;\n\n		//先删除列\n		for (var i = 0; i < this.vertexs.length; i++) {\n			hMatris = this.matris[i];\n			hMatris.splice(index);\n		}\n		//再删除行\n		this.matris.splice(index);\n		//再删除节点\n		this.vertexs.splice(index);\n		//重新设置节点\n		this.initialIdsMap(index);\n	}\n}\n\n/**\n * 图的深度优先遍历\n */\nAdjMatris.prototype.travelDFS = function(iterator) {\n\n	var visited = {};\n\n	for (var i = 0; i < this.vertexs.length; i++) {\n		var vetex = this.vertexs[i];\n		visited[vetex.id] = false;\n	}\n\n	for (var i = 0; i < this.vertexs.length; i++) {\n		var vetex = this.vertexs[i];\n		if(!visited[vetex.id]) {\n			this.DFS(visited , vetex.id , iterator);	\n		}\n	}\n}\n\nAdjMatris.prototype.DFS = function(visited , id , iterator) {\n\n	var outputs = this.getOuputAdjById(id);\n	var index = this.id2Index(id);\n\n	iterator && iterator(this.vertexs[index]);\n	visited[id] = true;\n\n	for (var i = 0; i < outputs.length; i++) {\n		var vetex = outputs[i];\n		if(!visited[vetex.id]) {\n			this.DFS(visited , vetex.id, iterator);\n		}\n	}\n}\n\n/**\n * 图的广度优先遍历\n */\nAdjMatris.prototype.travelBFS = function(iterator) {\n	var visited = {};\n\n	for (var i = 0; i < this.vertexs.length; i++) {\n		var vetex = this.vertexs[i];\n		visited[vetex.id] = false;\n	}\n\n	for (var i = 0; i < this.vertexs.length; i++) {\n		var vetex = this.vertexs[i];\n		if(!visited[vetex.id]) {\n			this.BFS(visited , vetex.id , iterator);	\n		}\n	}\n}\n\nAdjMatris.prototype.BFS = function(visited , id , iterator) {\n\n	var index = this.id2Index(id);\n	var queue = new Queue();\n\n	iterator && iterator(this.vertexs[index]);\n	visited[id] = true;\n	queue.enQueue(id);\n\n	while(!queue.empty()) {\n		var vetexId = queue.deQueue();\n		var outputs = this.getOuputAdjById(vetexId);\n\n		for (var i = 0; i < outputs.length; i++) {\n			var vetex = outputs[i];\n			if(!visited[vetex.id]) {\n				iterator(vetex);\n				visited[vetex.id] = true;\n				queue.enQueue(vetex.id);\n			}\n		}\n	}\n}\n\n/**\n * 判断无向图是否连通\n */\nAdjMatris.prototype.isAllConneced = function() {\n	var visited = {};\n\n	for (var i = 0; i < this.vertexs.length; i++) {\n		var vetex = this.vertexs[i];\n		visited[vetex.id] = false;\n	}\n\n	if(this.vertexs.length <= 0) {\n		return true;\n	}\n\n	var vetex = this.vertexs[0];\n	var count = 0;\n\n	this.BFS(visited , vetex.id , function() {\n		count++;\n	});	\n	return count == this.vertexs.length;\n}\n\n/**\n * 普里姆算法 - 求解无向图的最小生成树\n */\nAdjMatris.prototype.miniSpanPrim = function() {\n\n	var lowerCost = [], teends = [];\n	var spanResult = [];\n	var spanCost = 0;\n\n	lowerCost[0] = 0;\n	teends[0] = 0;\n\n	for (var i = 1; i < this.vertexs.length; i++) {\n		teends[i] = 0;\n		lowerCost[i] = this.matris[0][i];\n	}\n\n	for (var i = 1; i < this.vertexs.length; i++) {\n		var miniCost = Number.MAX_VALUE;\n		var j = 1 , k;\n\n		while(j < this.vertexs.length) {\n			if(lowerCost[j] > 0 && miniCost > lowerCost[j]) {\n				miniCost = lowerCost[j];\n				k = j;\n			}\n			j++;\n		}\n\n		var from = this.vertexs[teends[k]];\n		var to = this.vertexs[k];\n\n		spanResult.push({\n			from : from,\n			to   : to,\n			cost : miniCost\n		});\n\n		spanCost+= miniCost;\n		lowerCost[k] = 0;\n\n		for (var j = 0; j < this.vertexs.length; j++) {\n			if(this.matris[k][j] < lowerCost[j])	{\n				lowerCost[j] = this.matris[k][j];\n				teends[j] = k;\n			}\n		}\n	}\n\n	return {\n		spanCost  : spanCost,\n		spanResult : spanResult\n	};\n}\n\n/**\n * 克鲁斯卡尔算法 - 求解无向图的最小生成树\n */\nAdjMatris.prototype.miniSpanKruskal = function() {\n\n	//先构造一个无边的网络存储当前的最小生成树\n	var miniAdjMatris = new AdjMatris(this.vertexs , []);\n\n\n}\n\n",
+			"file": "graph/adjMatris.js",
+			"file_size": 7043,
+			"file_write_time": 1354418751000000,
+			"settings":
+			{
+				"buffer_size": 6760,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "test/testGraph.js",
 			"settings":
 			{
-				"buffer_size": 963,
+				"buffer_size": 1705,
 				"line_ending": "Unix"
 			}
 		}
@@ -440,6 +455,7 @@
 	},
 	"file_history":
 	[
+		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
 		"/Users/hpf1908/projects/javascript/algorithm/queue/queue.js",
@@ -566,8 +582,7 @@
 		"/Users/hpf1908/projects/jsc/test/ast/tmpl.js",
 		"/Users/hpf1908/projects/jsc/test/module/tmpl.js",
 		"/Users/hpf1908/projects/jsc/test/watcher/tmpl.js",
-		"/Users/hpf1908/projects/jsc/node_modules/uglify-js/README.html",
-		"/Users/hpf1908/projects/jsc/package.json"
+		"/Users/hpf1908/projects/jsc/node_modules/uglify-js/README.html"
 	],
 	"find":
 	{
@@ -585,6 +600,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"reverse",
 			"initialIdsMap",
 			"graph.js",
 			"huffmanEncodeStringByTables",
@@ -711,8 +727,7 @@
 			"save",
 			"circle1",
 			"custom draw",
-			"custom draw ",
-			"zindex"
+			"custom draw "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -735,18 +750,45 @@
 			[
 				{
 					"buffer": 0,
-					"file": "test/testGraph.js",
+					"file": "graph/adjMatris.js",
 					"settings":
 					{
-						"buffer_size": 963,
+						"buffer_size": 6760,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								772,
-								772
+								6316,
+								6316
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4036.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "test/testGraph.js",
+					"settings":
+					{
+						"buffer_size": 1705,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1132,
+								1075
 							]
 						],
 						"settings":
@@ -754,7 +796,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 438.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
