@@ -86,3 +86,7 @@ if(adjMatris.isAllConneced()) {
 } else {
 	console.log('not connected');
 }
+
+console.log('shortestPath');
+
+console.log(adjMatris.shortestPath(1));

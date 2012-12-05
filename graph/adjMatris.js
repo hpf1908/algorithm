@@ -477,8 +477,106 @@ AdjMatris.prototype.miniSpanKruskal = function() {
 	}
 
 	return {
-		spanCost  : spanCost,
+		spanCost   : spanCost,
 		spanResult : spanResult
 	};
+}
+
+
+/**
+ * 求解最短路径 -- 迪杰斯特拉算法
+ */
+AdjMatris.prototype.shortestPath = function(id) {
+
+	var startIndex = this.id2Index(id);
+
+	var doneMap = {};
+	var path    = [];
+	var dist    = [];
+	var self    = this;
+
+	//已经找到的最短路径数量
+	var doneCount = 0;
+
+	var findShortestVertex = function() {
+
+		var miniDist  = Number.MAX_VALUE;
+		var miniIndex = -1;
+
+		for (var i = 0; i < self.vertexs.length; i++) {
+			if(!doneMap[i] && dist[i] < miniDist) {
+				miniIndex = i;
+				miniDist = dist[i];
+			}
+		}
+
+		return miniIndex;
+	}
+
+	var searchDirectVertexs = function(fromIndex) {
+		var arr = [];
+		for (var i = 0; i < self.vertexs.length; i++) {
+
+			if(!doneMap[i] && self.matris[fromIndex][i] != Number.MAX_VALUE) {
+				arr.push(i);
+			}
+		};
+		return arr;
+	}
+
+	var copyPath = function(index) {
+		var srcPath = path[index];
+		var tarPath = [];
+		for (var i = 0; i < srcPath.length; i++) {
+			tarPath.push(srcPath[i]);
+		};
+		return tarPath;
+	}
+
+	for (var i = 0; i < this.vertexs.length; i++) {
+		path.push([]);
+		dist.push(this.matris[startIndex][i]);
+		path[i].push(this.vertexs[startIndex]);
+	}
+
+	doneMap[startIndex] = true;
+
+	while(doneCount < this.vertexs.length - 1) {
+
+		var miniIndex = findShortestVertex();
+
+		if(miniIndex == -1) {
+			break;
+		}
+
+		doneMap[miniIndex] = true;
+		path[miniIndex].push(this.vertexs[miniIndex]);
+		doneCount++;
+
+		var directVertexs = searchDirectVertexs(miniIndex);
+
+		for (var i = 0; i < directVertexs.length; i++) {
+			var toIndex = directVertexs[i];
+
+			if(dist[miniIndex] + this.matris[miniIndex][toIndex] < dist[toIndex]) {
+				dist[toIndex] = dist[miniIndex] + this.matris[miniIndex][toIndex];
+				path[toIndex] = copyPath(miniIndex);
+			}
+		};
+	}
+
+	var result = [];
+
+	for (var i = 0; i < path.length; i++) {
+
+		result.push({
+			from : this.vertexs[startIndex],
+			to   : this.vertexs[i],
+			path : path[i],
+			dist : startIndex == i ? 0 : dist[i]
+		});
+	}
+
+	return result;
 }
 
