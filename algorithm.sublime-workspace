@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"计算机",
+				"计算机操作系统"
+			],
+			[
+				"ver",
+				"vertexs"
+			],
+			[
+				"a",
+				"A"
+			],
+			[
+				"con",
+				"construntor"
+			],
+			[
 				"to",
 				"toIndex"
 			],
@@ -14,10 +30,6 @@
 			[
 				"ma",
 				"matris"
-			],
-			[
-				"a",
-				"arr"
 			],
 			[
 				"done",
@@ -114,10 +126,6 @@
 			[
 				"pro",
 				"prototype"
-			],
-			[
-				"ver",
-				"vertexs"
 			],
 			[
 				"getou",
@@ -444,34 +452,26 @@
 	"buffers":
 	[
 		{
-			"file": "test/testGraph.js",
+			"file": "test/testAov.js",
 			"settings":
 			{
-				"buffer_size": 1925,
+				"buffer_size": 1158,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/testGraph.html",
+			"file": "test/testAov.html",
 			"settings":
 			{
-				"buffer_size": 394,
+				"buffer_size": 465,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "graph/adjMatris.js",
+			"file": "graph/aovMatris.js",
 			"settings":
 			{
-				"buffer_size": 11471,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 13148,
+				"buffer_size": 1697,
 				"line_ending": "Unix"
 			}
 		}
@@ -500,15 +500,20 @@
 	},
 	"file_history":
 	[
-		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.js",
+		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
-		"/Users/hpf1908/projects/javascript/algorithm/stack/stack.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
+		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
+		"/Users/hpf1908/projects/javascript/algorithm/link/bak.js",
+		"/Users/hpf1908/projects/javascript/algorithm/graph/bak.js",
+		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.js",
+		"/Users/hpf1908/projects/javascript/algorithm/stack/stack.js",
 		"/Users/hpf1908/projects/javascript/algorithm/queue/queue.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGrapha.js",
 		"/Users/hpf1908/projects/javascript/algorithm/matcher/kmpMatcher.js",
 		"/Users/hpf1908/projects/javascript/algorithm/matcher/rabinKappMatcher.js",
-		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
 		"/Users/hpf1908/projects/algorithm/test/testTree.js",
 		"/Users/hpf1908/projects/algorithm/tree/tree.js",
 		"/Users/hpf1908/projects/algorithm/test/testTree.html",
@@ -622,12 +627,7 @@
 		"/Users/hpf1908/projects/jsc/test/sync.js",
 		"/Users/hpf1908/projects/jsc/test/files/a_copy.js",
 		"/Users/hpf1908/projects/jsc/test/watcher.js",
-		"/Users/hpf1908/projects/jsc/lib/queue.js",
-		"/Users/hpf1908/projects/jsc/lib/templates/micro.js",
-		"/Users/hpf1908/projects/jsc/index.js",
-		"/Users/hpf1908/projects/jsc/test/ast/tmpl.js",
-		"/Users/hpf1908/projects/jsc/test/module/tmpl.js",
-		"/Users/hpf1908/projects/jsc/test/watcher/tmpl.js"
+		"/Users/hpf1908/projects/jsc/lib/queue.js"
 	],
 	"find":
 	{
@@ -645,6 +645,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"apply",
 			"pos",
 			"id2Index",
 			"getOuputAdjByIndex",
@@ -771,8 +772,7 @@
 			"saveData",
 			"_listenDrag",
 			"draggable",
-			"saveData",
-			"save"
+			"saveData"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -790,23 +790,23 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test/testGraph.js",
+					"file": "test/testAov.js",
 					"settings":
 					{
-						"buffer_size": 1925,
+						"buffer_size": 1158,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1921,
-								1921
+								950,
+								914
 							]
 						],
 						"settings":
@@ -814,25 +814,25 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 606.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/testGraph.html",
+					"file": "test/testAov.html",
 					"settings":
 					{
-						"buffer_size": 394,
+						"buffer_size": 465,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								286,
-								286
+								420,
+								420
 							]
 						],
 						"settings":
@@ -847,55 +847,28 @@
 				},
 				{
 					"buffer": 2,
-					"file": "graph/adjMatris.js",
+					"file": "graph/aovMatris.js",
 					"settings":
 					{
-						"buffer_size": 11471,
+						"buffer_size": 1697,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11441,
-								11441
+								1687,
+								1687
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 7466.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-					"settings":
-					{
-						"buffer_size": 13148,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1811,
-								1811
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 158.0,
+						"translation.y": 382.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
