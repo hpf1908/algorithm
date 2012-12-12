@@ -4,12 +4,56 @@
 		"selected_items":
 		[
 			[
-				"计算机",
-				"计算机操作系统"
+				"ed",
+				"edge"
+			],
+			[
+				"edg",
+				"edges"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"le",
+				"le"
+			],
+			[
+				"top",
+				"topoResult"
+			],
+			[
+				"el",
+				"ealestTime"
 			],
 			[
 				"ver",
-				"vertexs"
+				"vertex"
+			],
+			[
+				"ma",
+				"MAX_VALUE"
+			],
+			[
+				"vet",
+				"vertex"
+			],
+			[
+				"fr",
+				"for	for (…) {…}"
+			],
+			[
+				"to",
+				"topoResult"
+			],
+			[
+				"t",
+				"topoResult"
+			],
+			[
+				"计算机",
+				"计算机操作系统"
 			],
 			[
 				"a",
@@ -20,16 +64,8 @@
 				"construntor"
 			],
 			[
-				"to",
-				"toIndex"
-			],
-			[
 				"di",
 				"dist"
-			],
-			[
-				"ma",
-				"matris"
 			],
 			[
 				"done",
@@ -56,10 +92,6 @@
 				"vetex"
 			],
 			[
-				"fr",
-				"fromId"
-			],
-			[
 				"de",
 				"delEdge"
 			],
@@ -68,16 +100,8 @@
 				"checkLoop"
 			],
 			[
-				"ed",
-				"edge"
-			],
-			[
 				"fro",
 				"fromId"
-			],
-			[
-				"edg",
-				"edge"
 			],
 			[
 				"ad",
@@ -150,10 +174,6 @@
 			[
 				"ti",
 				"title"
-			],
-			[
-				"le",
-				"length"
 			],
 			[
 				"co",
@@ -242,10 +262,6 @@
 			[
 				"fa",
 				"findFlag"
-			],
-			[
-				"l",
-				"leftChild"
 			],
 			[
 				"for",
@@ -364,10 +380,6 @@
 				"topicRel"
 			],
 			[
-				"t",
-				"type"
-			],
-			[
 				"ac",
 				"actived"
 			],
@@ -455,15 +467,7 @@
 			"file": "test/testAov.js",
 			"settings":
 			{
-				"buffer_size": 1158,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/testAov.html",
-			"settings":
-			{
-				"buffer_size": 465,
+				"buffer_size": 2087,
 				"line_ending": "Unix"
 			}
 		},
@@ -471,7 +475,7 @@
 			"file": "graph/aovMatris.js",
 			"settings":
 			{
-				"buffer_size": 1697,
+				"buffer_size": 3993,
 				"line_ending": "Unix"
 			}
 		}
@@ -500,6 +504,7 @@
 	},
 	"file_history":
 	[
+		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.html",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
@@ -626,8 +631,7 @@
 		"/Users/hpf1908/projects/jsc/test/sync/src/b.js",
 		"/Users/hpf1908/projects/jsc/test/sync.js",
 		"/Users/hpf1908/projects/jsc/test/files/a_copy.js",
-		"/Users/hpf1908/projects/jsc/test/watcher.js",
-		"/Users/hpf1908/projects/jsc/lib/queue.js"
+		"/Users/hpf1908/projects/jsc/test/watcher.js"
 	],
 	"find":
 	{
@@ -798,15 +802,15 @@
 					"file": "test/testAov.js",
 					"settings":
 					{
-						"buffer_size": 1158,
+						"buffer_size": 2087,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								950,
-								914
+								1893,
+								1893
 							]
 						],
 						"settings":
@@ -814,51 +818,25 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 606.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/testAov.html",
-					"settings":
-					{
-						"buffer_size": 465,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								420,
-								420
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "graph/aovMatris.js",
 					"settings":
 					{
-						"buffer_size": 1697,
+						"buffer_size": 3993,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1687,
-								1687
+								3961,
+								3961
 							]
 						],
 						"settings":
@@ -868,7 +846,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 382.0,
+						"translation.y": 1586.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
