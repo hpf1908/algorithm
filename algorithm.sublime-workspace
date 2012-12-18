@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"ca",
+				"capacity"
+			],
+			[
+				"ke",
+				"keyObject"
+			],
+			[
+				"li",
+				"linkList"
+			],
+			[
+				"p",
+				"pnode"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"ha",
+				"hashCode"
+			],
+			[
+				"co",
+				"converKeyToInt"
+			],
+			[
 				"ed",
 				"edge"
 			],
@@ -168,16 +196,8 @@
 				"prototype"
 			],
 			[
-				"p",
-				"prototype"
-			],
-			[
 				"ti",
 				"title"
-			],
-			[
-				"co",
-				"codes"
 			],
 			[
 				"ou",
@@ -332,10 +352,6 @@
 				"filter"
 			],
 			[
-				"ca",
-				"cache"
-			],
-			[
 				"cr",
 				"createJs"
 			],
@@ -463,22 +479,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "test/testAov.js",
-			"settings":
-			{
-				"buffer_size": 2087,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "graph/aovMatris.js",
-			"settings":
-			{
-				"buffer_size": 3993,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -504,11 +504,21 @@
 	},
 	"file_history":
 	[
-		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.html",
-		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
-		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.js",
+		"/Users/hpf1908/projects/javascript/algorithm/hashMap/hashMap.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testLinkList.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.html",
+		"/Users/hpf1908/projects/javascript/algorithm/stack/hexadecimal.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testQueue.html",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testStack.html",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testTree.html",
+		"/Users/hpf1908/projects/javascript/algorithm/tree/tree.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.js",
+		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.html",
+		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/bak.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/bak.js",
 		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
@@ -621,17 +631,7 @@
 		"/Users/hpf1908/projects/jsc/lib/util.js",
 		"/Users/hpf1908/projects/jsc/lib/config.js",
 		"/Users/hpf1908/projects/jsc/readme.md",
-		"/Users/hpf1908/projects/jsc/test/sync/src/a.js",
-		"/Users/hpf1908/projects/jsc/test/sync/index.js",
-		"/Users/hpf1908/projects/jsc/test/sync/a.js",
-		"/Users/hpf1908/projects/jsc/test/watcher/src/a.js",
-		"/Users/hpf1908/projects/jsc/test/sync/src/c.js",
-		"/Users/hpf1908/projects/jsc/test/sync/c.js",
-		"/Users/hpf1908/projects/jsc/test/sync/b.js",
-		"/Users/hpf1908/projects/jsc/test/sync/src/b.js",
-		"/Users/hpf1908/projects/jsc/test/sync.js",
-		"/Users/hpf1908/projects/jsc/test/files/a_copy.js",
-		"/Users/hpf1908/projects/jsc/test/watcher.js"
+		"/Users/hpf1908/projects/jsc/test/sync/src/a.js"
 	],
 	"find":
 	{
@@ -649,6 +649,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"keyLinks",
 			"apply",
 			"pos",
 			"id2Index",
@@ -775,8 +776,7 @@
 			"data",
 			"saveData",
 			"_listenDrag",
-			"draggable",
-			"saveData"
+			"draggable"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -794,63 +794,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "test/testAov.js",
-					"settings":
-					{
-						"buffer_size": 2087,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1893,
-								1893
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 606.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "graph/aovMatris.js",
-					"settings":
-					{
-						"buffer_size": 3993,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3961,
-								3961
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1586.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
