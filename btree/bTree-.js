@@ -29,7 +29,7 @@ BMinusTreeNode.prototype.nextChild = function(key) {
 }
 
 BMinusTreeNode.prototype.insertBTreeNodeOnLeaf = function(bTreeNode) {
-    var index = this.findInsertIndex(bTreeNode);
+    var index = this.findInsertIndex(bTreeNode.key);
     this.nodes.splice(index , 0 , bTreeNode);
     this.links.splice(index , 0 , null);
 }
@@ -73,9 +73,9 @@ BMinusTreeNode.prototype.splitToParent = function(parentNode , linkIndex) {
 BMinusTreeNode.prototype.findKey = function(key) {
     var arr = this.nodes;
     var low = 0;
-    var heigh = arr.length;
+    var heigh = arr.length - 1;
 
-    while(low < heigh) {
+    while(low <= heigh) {
         var mid = Math.floor((low + heigh) / 2);
         var midkey = arr[mid].key;
         if(midkey == key) {
@@ -141,11 +141,6 @@ BMinusTree.prototype.add = function(bTreeNode) {
     }
 }
 
-//删除指定关键字的节点
-BMinusTree.prototype.del = function(key) {
-
-}
-
 //搜索指定关键字的节点
 BMinusTree.prototype.search = function(key) {
 
@@ -162,5 +157,18 @@ BMinusTree.prototype.search = function(key) {
         }
     }
     return result;
+}
+
+//删除指定关键字的节点
+//step 1:找到要删除的节点
+//step 2:假设叶节点之前的层次深度为h，判断删除节点深度是否为h, 如果是直接进入3,不是则与下一层交换直到深度为h
+//step 3:删除节点 , 区分三种情况
+//       删除节点分支小于 m/2
+//       删除节点分支与兄弟节点分支都等于m/2
+//       删除节点分支等于 m/2,兄弟节点大于m/2  
+BMinusTree.prototype.del = function(key) {
+
+
+
 }
 

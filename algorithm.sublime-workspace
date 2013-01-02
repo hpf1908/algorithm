@@ -4,16 +4,24 @@
 		"selected_items":
 		[
 			[
+				"reu",
+				"result"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"node",
+				"node5"
+			],
+			[
 				"li",
 				"links"
 			],
 			[
 				"no",
 				"node3"
-			],
-			[
-				"le",
-				"leftNode"
 			],
 			[
 				"spl",
@@ -264,10 +272,6 @@
 				"mergeNode1"
 			],
 			[
-				"node",
-				"node2"
-			],
-			[
 				"r",
 				"rightChildLen"
 			],
@@ -500,26 +504,10 @@
 	"buffers":
 	[
 		{
-			"file": "test/testBtree.js",
-			"settings":
-			{
-				"buffer_size": 209,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "btree/bTree-.js",
 			"settings":
 			{
-				"buffer_size": 3547,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "stack/stack.js",
-			"settings":
-			{
-				"buffer_size": 384,
+				"buffer_size": 4215,
 				"line_ending": "Unix"
 			}
 		}
@@ -548,10 +536,12 @@
 	},
 	"file_history":
 	[
+		"/Users/hpf1908/projects/javascript/algorithm/sort/binaryInsert.js",
 		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree-.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.js",
+		"/Users/hpf1908/projects/javascript/algorithm/stack/stack.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.html",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.html",
@@ -573,7 +563,6 @@
 		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.js",
-		"/Users/hpf1908/projects/javascript/algorithm/stack/stack.js",
 		"/Users/hpf1908/projects/javascript/algorithm/queue/queue.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGrapha.js",
 		"/Users/hpf1908/projects/javascript/algorithm/matcher/kmpMatcher.js",
@@ -674,8 +663,7 @@
 		"/Users/hpf1908/projects/jsc/test/compress.js",
 		"/Users/hpf1908/projects/jsc/test/compress/target/sub/a.js",
 		"/Users/hpf1908/projects/jsc/test/compress/target/sub/b.js",
-		"/Users/hpf1908/projects/jsc/test/compress/target/sub/c.js",
-		"/Users/hpf1908/projects/jsc/test/compress/target/a.js"
+		"/Users/hpf1908/projects/jsc/test/compress/target/sub/c.js"
 	],
 	"find":
 	{
@@ -838,49 +826,22 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test/testBtree.js",
-					"settings":
-					{
-						"buffer_size": 209,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								186,
-								186
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "btree/bTree-.js",
 					"settings":
 					{
-						"buffer_size": 3547,
+						"buffer_size": 4215,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1738,
-								1738
+								2118,
+								2118
 							]
 						],
 						"settings":
@@ -890,34 +851,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 648.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "stack/stack.js",
-					"settings":
-					{
-						"buffer_size": 384,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								337,
-								342
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 774.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
