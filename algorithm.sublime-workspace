@@ -4,16 +4,64 @@
 		"selected_items":
 		[
 			[
-				"ca",
-				"capacity"
+				"li",
+				"links"
+			],
+			[
+				"no",
+				"node3"
+			],
+			[
+				"le",
+				"leftNode"
+			],
+			[
+				"spl",
+				"splitToParent"
+			],
+			[
+				"lik",
+				"linkIndex"
+			],
+			[
+				"ri",
+				"rightNode"
+			],
+			[
+				"lin",
+				"linkStack"
+			],
+			[
+				"sl",
+				"splice"
+			],
+			[
+				"bm",
+				"BMinusTreeNode"
+			],
+			[
+				"de",
+				"degree"
+			],
+			[
+				"in",
+				"insertBTreeNodeOnLeaf"
+			],
+			[
+				"ne",
+				"nextChild"
+			],
+			[
+				"f",
+				"findNextChild"
 			],
 			[
 				"ke",
-				"keyObject"
+				"keys"
 			],
 			[
-				"li",
-				"linkList"
+				"ca",
+				"capacity"
 			],
 			[
 				"p",
@@ -42,10 +90,6 @@
 			[
 				"l",
 				"length"
-			],
-			[
-				"le",
-				"le"
 			],
 			[
 				"top",
@@ -120,10 +164,6 @@
 				"vetex"
 			],
 			[
-				"de",
-				"delEdge"
-			],
-			[
 				"ch",
 				"checkLoop"
 			],
@@ -138,10 +178,6 @@
 			[
 				"add",
 				"addEdge"
-			],
-			[
-				"f",
-				"fromId"
 			],
 			[
 				"edge",
@@ -170,10 +206,6 @@
 			[
 				"ini",
 				"initialIdsMap"
-			],
-			[
-				"in",
-				"index"
 			],
 			[
 				"pro",
@@ -224,10 +256,6 @@
 				"weight"
 			],
 			[
-				"ne",
-				"minNode2"
-			],
-			[
 				"me",
 				"mergeNode2"
 			],
@@ -236,16 +264,8 @@
 				"mergeNode1"
 			],
 			[
-				"no",
-				"node1"
-			],
-			[
 				"node",
 				"node2"
-			],
-			[
-				"ri",
-				"rightChildLen"
 			],
 			[
 				"r",
@@ -479,6 +499,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "test/testBtree.js",
+			"settings":
+			{
+				"buffer_size": 209,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "btree/bTree-.js",
+			"settings":
+			{
+				"buffer_size": 3547,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "stack/stack.js",
+			"settings":
+			{
+				"buffer_size": 384,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -504,9 +548,18 @@
 	},
 	"file_history":
 	[
-		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.js",
-		"/Users/hpf1908/projects/javascript/algorithm/hashMap/hashMap.js",
+		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree-.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.html",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.js",
+		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
+		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.html",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.js",
+		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree+.js",
+		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree+",
+		"/Users/hpf1908/projects/javascript/algorithm/hashMap/hashMap.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testLinkList.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.html",
 		"/Users/hpf1908/projects/javascript/algorithm/stack/hexadecimal.js",
@@ -515,10 +568,6 @@
 		"/Users/hpf1908/projects/javascript/algorithm/test/testTree.html",
 		"/Users/hpf1908/projects/javascript/algorithm/tree/tree.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.html",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.js",
-		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.html",
-		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/bak.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/bak.js",
 		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
@@ -626,12 +675,7 @@
 		"/Users/hpf1908/projects/jsc/test/compress/target/sub/a.js",
 		"/Users/hpf1908/projects/jsc/test/compress/target/sub/b.js",
 		"/Users/hpf1908/projects/jsc/test/compress/target/sub/c.js",
-		"/Users/hpf1908/projects/jsc/test/compress/target/a.js",
-		"/Users/hpf1908/projects/jsc/test/util.js",
-		"/Users/hpf1908/projects/jsc/lib/util.js",
-		"/Users/hpf1908/projects/jsc/lib/config.js",
-		"/Users/hpf1908/projects/jsc/readme.md",
-		"/Users/hpf1908/projects/jsc/test/sync/src/a.js"
+		"/Users/hpf1908/projects/jsc/test/compress/target/a.js"
 	],
 	"find":
 	{
@@ -794,8 +838,90 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "test/testBtree.js",
+					"settings":
+					{
+						"buffer_size": 209,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "btree/bTree-.js",
+					"settings":
+					{
+						"buffer_size": 3547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1738,
+								1738
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 648.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "stack/stack.js",
+					"settings":
+					{
+						"buffer_size": 384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

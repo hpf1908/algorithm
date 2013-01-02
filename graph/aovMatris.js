@@ -119,6 +119,7 @@ AovMatris.prototype.getLatestTime = function(inputVertex , earlestMap , latestMa
     return latestTime == Number.MAX_VALUE ? earlestMap[inputVertex.id] : latestTime;
 }
 
+//求解aov网的关键路径
 AovMatris.prototype.criticalPath = function() {
 
     var topoResult = this.topoSort();
