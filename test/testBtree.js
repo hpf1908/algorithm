@@ -32,6 +32,17 @@ bTree.add(node);
 console.log(bTree.search(99));
 console.log(bTree.search(11111));
 
+console.log('test del BTree on head');
+var bTree = new BMinusTree(3);
+
+var node = new BTreeNode(1 , 1);
+bTree.add(node);
+
+var node = new BTreeNode(2 , 2);
+bTree.add(node);
+bTree.del(1);
+console.log(bTree);
+
 console.log('test del BTree right merge');
 
 var bTree = new BMinusTree(3);

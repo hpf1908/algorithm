@@ -4,24 +4,64 @@
 		"selected_items":
 		[
 			[
+				"n",
+				"nodes"
+			],
+			[
 				"new",
-				"newMinusNode"
+				"newNodes"
+			],
+			[
+				"ge",
+				"getNodeAtIndex"
+			],
+			[
+				"las",
+				"lastBranchNode"
+			],
+			[
+				"bt",
+				"bTree"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"l",
+				"links"
+			],
+			[
+				"left",
+				"leftMaxNode"
+			],
+			[
+				"la",
+				"lastBranchIndex"
+			],
+			[
+				"pa",
+				"parentNode"
+			],
+			[
+				"br",
+				"break"
+			],
+			[
+				"inde",
+				"indexStack"
+			],
+			[
+				"del",
+				"deleteMinusNode"
 			],
 			[
 				"ne",
 				"newLinks"
 			],
 			[
-				"le",
-				"leftSibling"
-			],
-			[
 				"get",
 				"getNodeAtIndex"
-			],
-			[
-				"pa",
-				"parentNode"
 			],
 			[
 				"B",
@@ -48,14 +88,6 @@
 				"leftSibling"
 			],
 			[
-				"la",
-				"lastBranchIndex"
-			],
-			[
-				"las",
-				"lastBranchNode"
-			],
-			[
 				"in",
 				"indexStack"
 			],
@@ -78,14 +110,6 @@
 			[
 				"de",
 				"degree"
-			],
-			[
-				"br",
-				"branchCount"
-			],
-			[
-				"del",
-				"deleteIndex"
 			],
 			[
 				"set",
@@ -166,10 +190,6 @@
 			[
 				"edg",
 				"edges"
-			],
-			[
-				"l",
-				"length"
 			],
 			[
 				"top",
@@ -262,10 +282,6 @@
 			[
 				"edge",
 				"edges"
-			],
-			[
-				"ge",
-				"getMiniEdge"
 			],
 			[
 				"ex",
@@ -498,43 +514,11 @@
 			[
 				"opt",
 				"opts"
-			],
-			[
-				"op",
-				"options"
-			],
-			[
-				"s",
-				"String"
-			],
-			[
-				"u",
-				"ul	Tag"
-			],
-			[
-				"ite",
-				"items"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "test/testBtree.js",
-			"settings":
-			{
-				"buffer_size": 685,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "btree/bTree-.js",
-			"settings":
-			{
-				"buffer_size": 9748,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -560,20 +544,22 @@
 	},
 	"file_history":
 	[
-		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree-.js",
-		"/Users/hpf1908/projects/javascript/algorithm/sort/binaryInsert.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.html",
+		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree-.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testQueue.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.js",
+		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.js",
+		"/Users/hpf1908/projects/javascript/algorithm/sort/binaryInsert.js",
 		"/Users/hpf1908/projects/javascript/algorithm/stack/stack.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.html",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/adjMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/graph/aovMatris.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.html",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testAov.js",
 		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree+.js",
 		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree+",
 		"/Users/hpf1908/projects/javascript/algorithm/hashMap/hashMap.js",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testLinkList.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testHashMap.html",
 		"/Users/hpf1908/projects/javascript/algorithm/stack/hexadecimal.js",
@@ -586,7 +572,6 @@
 		"/Users/hpf1908/projects/javascript/algorithm/graph/bak.js",
 		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/hpf1908/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/Users/hpf1908/projects/javascript/algorithm/test/testGraph.js",
 		"/Users/hpf1908/projects/javascript/algorithm/queue/queue.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testGrapha.js",
 		"/Users/hpf1908/projects/javascript/algorithm/matcher/kmpMatcher.js",
@@ -686,8 +671,7 @@
 		"/Users/hpf1908/projects/jsc/lib/watcher.js",
 		"/Users/hpf1908/projects/jsc/test/compress.js",
 		"/Users/hpf1908/projects/jsc/test/compress/target/sub/a.js",
-		"/Users/hpf1908/projects/jsc/test/compress/target/sub/b.js",
-		"/Users/hpf1908/projects/jsc/test/compress/target/sub/c.js"
+		"/Users/hpf1908/projects/jsc/test/compress/target/sub/b.js"
 	],
 	"find":
 	{
@@ -850,63 +834,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "test/testBtree.js",
-					"settings":
-					{
-						"buffer_size": 685,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								629,
-								629
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "btree/bTree-.js",
-					"settings":
-					{
-						"buffer_size": 9748,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9329,
-								9329
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4232.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
