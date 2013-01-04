@@ -4,16 +4,108 @@
 		"selected_items":
 		[
 			[
-				"reu",
-				"result"
+				"new",
+				"newMinusNode"
+			],
+			[
+				"ne",
+				"newLinks"
 			],
 			[
 				"le",
-				"length"
+				"leftSibling"
+			],
+			[
+				"get",
+				"getNodeAtIndex"
+			],
+			[
+				"pa",
+				"parentNode"
+			],
+			[
+				"B",
+				"BMinusTreeNode"
+			],
+			[
+				"ind",
+				"indexStack"
+			],
+			[
+				"is",
+				"isLeaf"
+			],
+			[
+				"ri",
+				"rightSibling"
+			],
+			[
+				"bra",
+				"branchCount"
+			],
+			[
+				"lef",
+				"leftSibling"
+			],
+			[
+				"la",
+				"lastBranchIndex"
+			],
+			[
+				"las",
+				"lastBranchNode"
+			],
+			[
+				"in",
+				"indexStack"
+			],
+			[
+				"bn",
+				"BMinusTreeNode"
+			],
+			[
+				"dele",
+				"deleteMinusNode"
+			],
+			[
+				"spl",
+				"splice"
+			],
+			[
+				"sp",
+				"splice"
+			],
+			[
+				"de",
+				"degree"
+			],
+			[
+				"br",
+				"branchCount"
+			],
+			[
+				"del",
+				"deleteIndex"
+			],
+			[
+				"set",
+				"setNodeAtIndex"
+			],
+			[
+				"mi",
+				"minusNode"
 			],
 			[
 				"node",
-				"node5"
+				"nodes"
+			],
+			[
+				"fi",
+				"findKeyIndex"
+			],
+			[
+				"reu",
+				"result"
 			],
 			[
 				"li",
@@ -24,16 +116,8 @@
 				"node3"
 			],
 			[
-				"spl",
-				"splitToParent"
-			],
-			[
 				"lik",
 				"linkIndex"
-			],
-			[
-				"ri",
-				"rightNode"
 			],
 			[
 				"lin",
@@ -46,18 +130,6 @@
 			[
 				"bm",
 				"BMinusTreeNode"
-			],
-			[
-				"de",
-				"degree"
-			],
-			[
-				"in",
-				"insertBTreeNodeOnLeaf"
-			],
-			[
-				"ne",
-				"nextChild"
 			],
 			[
 				"f",
@@ -204,10 +276,6 @@
 				"weight"
 			],
 			[
-				"sp",
-				"spantResult"
-			],
-			[
 				"v",
 				"vertexs"
 			],
@@ -222,10 +290,6 @@
 			[
 				"getou",
 				"getOuputAdjById"
-			],
-			[
-				"get",
-				"getInputAdjById"
 			],
 			[
 				"vert",
@@ -274,18 +338,6 @@
 			[
 				"r",
 				"rightChildLen"
-			],
-			[
-				"lef",
-				"leftChildLen"
-			],
-			[
-				"pa",
-				"parentStack"
-			],
-			[
-				"del",
-				"delParentNode"
 			],
 			[
 				"pc",
@@ -372,10 +424,6 @@
 				"watcher"
 			],
 			[
-				"fi",
-				"filter"
-			],
-			[
 				"cr",
 				"createJs"
 			],
@@ -402,10 +450,6 @@
 			[
 				"tmp",
 				"tmpl"
-			],
-			[
-				"la",
-				"languagesMap"
 			],
 			[
 				"find",
@@ -470,44 +514,24 @@
 			[
 				"ite",
 				"items"
-			],
-			[
-				"use",
-				"usersMap"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"h",
-				"h3	Tag"
-			],
-			[
-				"i",
-				"Item"
-			],
-			[
-				"U",
-				"Useritem"
-			],
-			[
-				"fu",
-				"function"
-			],
-			[
-				"ai",
-				"apikey"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "test/testBtree.js",
+			"settings":
+			{
+				"buffer_size": 685,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "btree/bTree-.js",
 			"settings":
 			{
-				"buffer_size": 4215,
+				"buffer_size": 9748,
 				"line_ending": "Unix"
 			}
 		}
@@ -536,8 +560,8 @@
 	},
 	"file_history":
 	[
-		"/Users/hpf1908/projects/javascript/algorithm/sort/binaryInsert.js",
 		"/Users/hpf1908/projects/javascript/algorithm/btree/bTree-.js",
+		"/Users/hpf1908/projects/javascript/algorithm/sort/binaryInsert.js",
 		"/Users/hpf1908/projects/javascript/algorithm/test/testBtree.js",
 		"/Users/hpf1908/projects/javascript/algorithm/stack/stack.js",
 		"/Users/hpf1908/projects/javascript/algorithm/link/linkList.js",
@@ -681,6 +705,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"branchCount",
+			"deleteIndex",
+			"isLeaf",
 			"keyLinks",
 			"apply",
 			"pos",
@@ -805,10 +832,7 @@
 			"_draw",
 			"_detectEvent",
 			"saveData",
-			"data",
-			"saveData",
-			"_listenDrag",
-			"draggable"
+			"data"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -826,22 +850,49 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "btree/bTree-.js",
+					"file": "test/testBtree.js",
 					"settings":
 					{
-						"buffer_size": 4215,
+						"buffer_size": 685,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2118,
-								2118
+								629,
+								629
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "btree/bTree-.js",
+					"settings":
+					{
+						"buffer_size": 9748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9329,
+								9329
 							]
 						],
 						"settings":
@@ -851,7 +902,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 774.0,
+						"translation.y": 4232.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
